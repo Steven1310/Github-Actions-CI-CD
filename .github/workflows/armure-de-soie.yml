@@ -35,4 +35,4 @@ jobs:
           
       # Runs a single command using the runners shell to curl loadOffers for that day
       - name: Run a one-line script
-        run: curl -X GET "https://api.armure-de-soie.co/api/loadOffers/${{ env.INCREMENTED_DATE }}"
+        run: curl -X GET "https://09ji8m4ho6.execute-api.us-west-1.amazonaws.com/prod/api/loadOffers/${{ env.CURRENT_DATE }}"
