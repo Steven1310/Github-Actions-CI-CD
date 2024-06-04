@@ -24,15 +24,7 @@ jobs:
       - name: Set current date
         id: set-date
         run: echo "CURRENT_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
-      # Runs a single command using the runners shell to increment current date
-      - name: Increment date by one day
-        id: increment-date
-        run: |
-          current_date=$(date +'%Y-%m-%d')
-          incremented_date=$(date -d "$current_date + 1 day" +'%Y-%m-%d')
-          echo "INCREMENTED_DATE=$incremented_date" >> $GITHUB_ENV
           
       # Runs a single command using the runners shell to curl loadOffers for that day
       - name: Run a one-line script
-        run: curl -X GET "https://09ji8m4ho6.execute-api.us-west-1.amazonaws.com/prod/api/loadOffers/${{ env.CURRENT_DATE }}"
+        run: curl -X GET "https://api.armure-de-soie.co/api/loadOffers/${{ env.CURRENT_DATE }}"
